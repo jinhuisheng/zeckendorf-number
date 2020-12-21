@@ -23,6 +23,8 @@ public class ZeckendorfRepresentation {
     private String generate(int number) {
         List<Integer> list = Arrays.asList(0, 1);
         int second = 0;
+//        List<FibonacciNumber>
+//        {0,0},{0,1},{1,0},{1,1}
         for (Integer one : list) {
             if (number == second * 2 + one * 1) {
                 return String.valueOf(one);
