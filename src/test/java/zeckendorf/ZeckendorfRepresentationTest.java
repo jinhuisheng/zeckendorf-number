@@ -36,5 +36,11 @@ public class ZeckendorfRepresentationTest {
         assertThat(result).isEqualTo(Arrays.asList("0", "1", "10", "100"));
     }
 
+    @Test
+    void robustness_testing() {
+        assertThat(new ZeckendorfRepresentation(0, 4).generate()).isEqualTo(Arrays.asList("0", "1", "10", "100", "101"));
+        assertThat(new ZeckendorfRepresentation(0, 5).generate()).isEqualTo(Arrays.asList("0", "1", "10", "100", "101", "1000"));
+        assertThat(new ZeckendorfRepresentation(0, 6).generate()).isEqualTo(Arrays.asList("0", "1", "10", "100", "101", "1000", "1001"));
+    }
 
 }

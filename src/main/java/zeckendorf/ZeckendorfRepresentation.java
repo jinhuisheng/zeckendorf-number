@@ -1,7 +1,5 @@
 package zeckendorf;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -18,15 +16,7 @@ public class ZeckendorfRepresentation {
     }
 
     private void initFabanacciFactors() {
-        fabanacciFactors = new ArrayList<>();
-        fabanacciFactors.add(Arrays.asList(0, 0, 0));
-        fabanacciFactors.add(Arrays.asList(0, 0, 1));
-        fabanacciFactors.add(Arrays.asList(0, 1, 0));
-//        fabanacciFactors.add(Arrays.asList(0, 1, 1));
-        fabanacciFactors.add(Arrays.asList(1, 0, 0));
-        fabanacciFactors.add(Arrays.asList(1, 0, 1));
-//        fabanacciFactors.add(Arrays.asList(1, 1, 0));
-//        fabanacciFactors.add(Arrays.asList(1, 1, 1));
+        fabanacciFactors = new ZeckendorfFactorGenerator(6).generate();
     }
 
     public List<String> generate() {
@@ -35,12 +25,30 @@ public class ZeckendorfRepresentation {
 
     private String generate(int number) {
         for (List<Integer> fabanacciFactor : fabanacciFactors) {
-            if (number == fabanacciFactor.get(0) * 3 + fabanacciFactor.get(1) * 2 + fabanacciFactor.get(2) * 1) {
-                String sum = fabanacciFactor.get(0) + "" + fabanacciFactor.get(1) + "" + fabanacciFactor.get(2);
+            if (number == zeckendorfFormula(fabanacciFactor)) {
+                String sum = sub(fabanacciFactor);
                 return dropZero(sum);
             }
         }
         return null;
+    }
+
+    private String sub(List<Integer> fabanacciFactor) {
+        return fabanacciFactor.get(0) + ""
+                + fabanacciFactor.get(1) + ""
+                + fabanacciFactor.get(2) + ""
+                + fabanacciFactor.get(3) + ""
+                + fabanacciFactor.get(4) + ""
+                + fabanacciFactor.get(5);
+    }
+
+    private int zeckendorfFormula(List<Integer> fabanacciFactor) {
+        return fabanacciFactor.get(0) * 13
+                + fabanacciFactor.get(1) * 8
+                + fabanacciFactor.get(2) * 5
+                + fabanacciFactor.get(3) * 3
+                + fabanacciFactor.get(4) * 2
+                + fabanacciFactor.get(5) * 1;
     }
 
     private String dropZero(String sum) {
