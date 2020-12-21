@@ -36,11 +36,6 @@ public class ZeckendorfRepresentation {
                 return String.valueOf(x);
             }
         }
-        for (Integer one : list) {
-            if (number == second * 2 + one * 1) {
-                return String.valueOf(one);
-            }
-        }
         return null;
     }
 }
