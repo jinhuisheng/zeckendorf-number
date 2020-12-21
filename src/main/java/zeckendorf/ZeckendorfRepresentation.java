@@ -1,5 +1,6 @@
 package zeckendorf;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,9 @@ public class ZeckendorfRepresentation {
 
     private String generate(int number) {
         List<Integer> list = Arrays.asList(0, 1);
+        List<List<Integer>> lists = new ArrayList<>();
+        lists.add(list);
+        lists.add(list);
         for (Integer one : list) {
             if (number == one * 1) {
                 return String.valueOf(one);
