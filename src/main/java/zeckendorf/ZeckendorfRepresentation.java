@@ -34,18 +34,9 @@ public class ZeckendorfRepresentation {
     }
 
     private String generate(int number) {
-        if (number == 3) {
-            for (List<Integer> fabanacciFactor : fabanacciFactors) {
-                if (number == fabanacciFactor.get(0) * 3 + fabanacciFactor.get(1) * 2 + fabanacciFactor.get(2) * 1) {
-                    String sum = fabanacciFactor.get(0) + "" + fabanacciFactor.get(1) + "" + fabanacciFactor.get(2);
-                    return dropZero(sum);
-                }
-            }
-            return null;
-        }
         for (List<Integer> fabanacciFactor : fabanacciFactors) {
-            if (number == fabanacciFactor.get(0) * 2 + fabanacciFactor.get(1) * 1) {
-                String sum = fabanacciFactor.get(0) + "" + fabanacciFactor.get(1);
+            if (number == fabanacciFactor.get(0) * 3 + fabanacciFactor.get(1) * 2 + fabanacciFactor.get(2) * 1) {
+                String sum = fabanacciFactor.get(0) + "" + fabanacciFactor.get(1) + "" + fabanacciFactor.get(2);
                 return dropZero(sum);
             }
         }
