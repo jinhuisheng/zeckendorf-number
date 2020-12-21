@@ -41,7 +41,7 @@ public class ZeckendorfRepresentation {
                     return dropZero(sum);
                 }
             }
-            return "100";
+            return null;
         }
         for (List<Integer> fabanacciFactor : fabanacciFactors) {
             if (number == fabanacciFactor.get(0) * 2 + fabanacciFactor.get(1) * 1) {
