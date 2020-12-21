@@ -15,11 +15,11 @@ public class ZeckendorfRepresentation {
         this.end = end;
     }
 
-    public List<Integer> generate() {
-        return IntStream.range(start, end + 1).map(this::generate).boxed().collect(Collectors.toList());
+    public List<String> generate() {
+        return IntStream.range(start, end + 1).boxed().map(this::generate).collect(Collectors.toList());
     }
 
-    private int generate(int number) {
-        return 0;
+    private String generate(int number) {
+        return "0";
     }
 }
