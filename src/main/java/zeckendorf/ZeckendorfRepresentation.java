@@ -25,6 +25,17 @@ public class ZeckendorfRepresentation {
         int second = 0;
 //        List<FibonacciNumber>
 //        {0,0},{0,1},{1,0},{1,1}
+        List<List<Integer>> fabanacciFactors = new ArrayList<>();
+        fabanacciFactors.add(Arrays.asList(0, 0));
+        fabanacciFactors.add(Arrays.asList(0, 1));
+        fabanacciFactors.add(Arrays.asList(1, 0));
+        fabanacciFactors.add(Arrays.asList(1, 1));
+        for (List<Integer> fabanacciFactor : fabanacciFactors) {
+            if (number == fabanacciFactor.get(0) * 2 + fabanacciFactor.get(1) * 1) {
+                int x = Integer.parseInt(fabanacciFactor.get(0) + "" + fabanacciFactor.get(1));
+                return String.valueOf(x);
+            }
+        }
         for (Integer one : list) {
             if (number == second * 2 + one * 1) {
                 return String.valueOf(one);
