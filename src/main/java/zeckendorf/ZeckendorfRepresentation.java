@@ -24,8 +24,11 @@ public class ZeckendorfRepresentation {
         if (number == i * 1) {
             return String.valueOf(i);
         }
-        if (number == 0 * 1) {
-            return "0";
+        List<Integer> list = Arrays.asList(0, 1);
+        for (Integer one : list) {
+            if (number == one * 1) {
+                return String.valueOf(one);
+            }
         }
         return null;
     }
