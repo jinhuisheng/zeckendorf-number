@@ -25,7 +25,7 @@ public class ZeckendorfRepresentation {
 //        fabanacciFactors.add(Arrays.asList(0, 1, 1));
         fabanacciFactors.add(Arrays.asList(1, 0, 0));
         fabanacciFactors.add(Arrays.asList(1, 0, 1));
-        fabanacciFactors.add(Arrays.asList(1, 1, 0));
+//        fabanacciFactors.add(Arrays.asList(1, 1, 0));
 //        fabanacciFactors.add(Arrays.asList(1, 1, 1));
     }
 
