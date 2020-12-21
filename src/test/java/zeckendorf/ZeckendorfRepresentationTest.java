@@ -29,5 +29,12 @@ public class ZeckendorfRepresentationTest {
         assertThat(result).isEqualTo(Arrays.asList("0", "1", "10"));
     }
 
+    @Test
+    void generate_from_0_to_3() {
+        ZeckendorfRepresentation zeckendorfRepresentation = new ZeckendorfRepresentation(0, 3);
+        List<String> result = zeckendorfRepresentation.generate();
+        assertThat(result).isEqualTo(Arrays.asList("0", "1", "10", "100"));
+    }
+
 
 }
