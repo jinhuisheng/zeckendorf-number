@@ -20,10 +20,6 @@ public class ZeckendorfRepresentation {
     }
 
     private String generate(int number) {
-        int i = 1;
-        if (number == i * 1) {
-            return String.valueOf(i);
-        }
         List<Integer> list = Arrays.asList(0, 1);
         for (Integer one : list) {
             if (number == one * 1) {
