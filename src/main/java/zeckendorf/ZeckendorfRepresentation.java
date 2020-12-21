@@ -24,6 +24,9 @@ public class ZeckendorfRepresentation {
         if (number == i * 1) {
             return String.valueOf(i);
         }
-        return "0";
+        if (number == 0 * 1) {
+            return "0";
+        }
+        return null;
     }
 }
