@@ -22,11 +22,9 @@ public class ZeckendorfRepresentation {
 
     private String generate(int number) {
         List<Integer> list = Arrays.asList(0, 1);
-        List<List<Integer>> lists = new ArrayList<>();
-        lists.add(list);
-        lists.add(list);
+        int second = 0;
         for (Integer one : list) {
-            if (number == one * 1) {
+            if (number == second * 2 + one * 1) {
                 return String.valueOf(one);
             }
         }
