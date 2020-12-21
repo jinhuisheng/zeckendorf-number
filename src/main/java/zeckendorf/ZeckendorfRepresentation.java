@@ -31,18 +31,24 @@ public class ZeckendorfRepresentation {
 
     private String generate(int number) {
         if (number == 3) {
+//            for (List<Integer> fabanacciFactor : fabanacciFactors) {
+//                if (number == 1 * 3 + fabanacciFactor.get(0) * 2 + fabanacciFactor.get(1) * 1) {
+//                    int x = Integer.parseInt(1 + fabanacciFactor.get(0) + "" + fabanacciFactor.get(1));
+//                    return dropZero(x);
+//                }
+//            }
             return "100";
         }
         for (List<Integer> fabanacciFactor : fabanacciFactors) {
             if (number == fabanacciFactor.get(0) * 2 + fabanacciFactor.get(1) * 1) {
-                int x = Integer.parseInt(fabanacciFactor.get(0) + "" + fabanacciFactor.get(1));
-                return dropZero(x);
+                String sum = fabanacciFactor.get(0) + "" + fabanacciFactor.get(1);
+                return dropZero(sum);
             }
         }
         return null;
     }
 
-    private String dropZero(int x) {
-        return String.valueOf(x);
+    private String dropZero(String sum) {
+        return String.valueOf(Integer.parseInt(sum));
     }
 }
