@@ -16,7 +16,7 @@ public class ZeckendorfRepresentation {
     }
 
     public List<Integer> generate() {
-        return IntStream.range(start, end + 1).map(i -> generate(i)).boxed().collect(Collectors.toList());
+        return IntStream.range(start, end + 1).map(this::generate).boxed().collect(Collectors.toList());
     }
 
     private int generate(int number) {
