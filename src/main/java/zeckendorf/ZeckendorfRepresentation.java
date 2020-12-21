@@ -20,6 +20,10 @@ public class ZeckendorfRepresentation {
     }
 
     private String generate(int number) {
+        int i = 1;
+        if (number == i * 1) {
+            return String.valueOf(i);
+        }
         return "0";
     }
 }
