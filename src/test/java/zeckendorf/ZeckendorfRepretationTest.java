@@ -42,4 +42,11 @@ public class ZeckendorfRepretationTest {
         List<String> result = zeckendorfRepretation.generate();
         assertThat(result).isEqualTo(asList("0", "1", "10", "100", "101"));
     }
+
+    @Test
+    void generate_from_0_to_6() {
+        ZeckendorfRepretation zeckendorfRepretation = new ZeckendorfRepretation(0, 6);
+        List<String> result = zeckendorfRepretation.generate();
+        assertThat(result).isEqualTo(asList("0", "1", "10", "100", "101", "1000", "1001"));
+    }
 }

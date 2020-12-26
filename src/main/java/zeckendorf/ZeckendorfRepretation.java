@@ -1,6 +1,5 @@
 package zeckendorf;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,7 +31,7 @@ public class ZeckendorfRepretation {
     }
 
     private List<Integer> getIntegers(int i) {
-        List<List<Integer>> matchedResult = getCandidates().stream()
+        List<List<Integer>> matchedResult = new CandidateGenerator().generate(3).stream()
                 .filter(candidate -> match(i, candidate))
                 .filter(this::notContinuous).collect(toList());
 
@@ -52,14 +51,4 @@ public class ZeckendorfRepretation {
         return !list.stream().map(String::valueOf).collect(Collectors.joining("")).contains("11");
     }
 
-    private List<List<Integer>> getCandidates() {
-        List<List<Integer>> collection = new ArrayList<>();
-        collection.add(Arrays.asList(1, 0, 1));
-        collection.add(Arrays.asList(1, 0, 0));
-        collection.add(Arrays.asList(0, 1, 1));
-        collection.add(Arrays.asList(0, 1, 0));
-        collection.add(Arrays.asList(0, 0, 1));
-        collection.add(Arrays.asList(0, 0, 0));
-        return collection;
-    }
 }

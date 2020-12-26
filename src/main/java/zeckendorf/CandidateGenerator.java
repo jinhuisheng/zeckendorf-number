@@ -1,17 +1,29 @@
 package zeckendorf;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Arrays.asList;
+import static java.util.Collections.singletonList;
 
 public class CandidateGenerator {
     public List<List<Integer>> generate(int count) {
-        if (count == 2) {
-            return Arrays.asList(
-                    Arrays.asList(1, 1),
-                    Arrays.asList(1, 0),
-                    Arrays.asList(0, 1),
-                    Arrays.asList(0, 0));
+        if (count == 1) {
+            return asList(
+                    singletonList(1),
+                    singletonList(0)
+            );
         }
-        return Arrays.asList(Arrays.asList(0), Arrays.asList(1));
+
+        List<List<Integer>> list = new ArrayList<>();
+        for (int i = 1; i >= 0; i--) {
+            for (List<Integer> integers : generate(count - 1)) {
+                List<Integer> temp = new ArrayList<>();
+                temp.add(i);
+                temp.addAll(integers);
+                list.add(temp);
+            }
+        }
+        return list;
     }
 }

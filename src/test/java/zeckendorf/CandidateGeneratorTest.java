@@ -14,7 +14,7 @@ public class CandidateGeneratorTest {
     void generate_one() {
         CandidateGenerator candidateGenerator = new CandidateGenerator();
         List<List<Integer>> result = candidateGenerator.generate(1);
-        assertThat(result).isEqualTo(Arrays.asList(Arrays.asList(0), Arrays.asList(1)));
+        assertThat(result).isEqualTo(Arrays.asList(Arrays.asList(1), Arrays.asList(0)));
     }
 
     @Test
