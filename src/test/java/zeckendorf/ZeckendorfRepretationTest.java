@@ -36,4 +36,12 @@ public class ZeckendorfRepretationTest {
         assertThat(result).isEqualTo(asList("0", "1", "10", "100"));
     }
 
+//    @Test
+//    void generate_from_0_to_4() {
+//        ZeckendorfRepretation zeckendorfRepretation = new ZeckendorfRepretation(0, 4);
+//        List<String> result = zeckendorfRepretation.generate();
+//        assertThat(result).isEqualTo(asList("0", "1", "10", "100"));
+//    }
+
+
 }

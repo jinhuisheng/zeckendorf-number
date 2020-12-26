@@ -1,5 +1,7 @@
 package zeckendorf;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -19,11 +21,26 @@ public class ZeckendorfRepretation {
     }
 
     private String convert(int i) {
-        if (i < 2) {
-            return String.valueOf(i);
-        }
+        List<List<Integer>> collection = getLists();
 
-        //1 * 2 + 0 * 1;
-        return 1 + "" + "" + 0;
+        List<List<Integer>> collection2 = getLists();
+        for (List<Integer> item : collection) {
+            if (i == item.get(0) * 3 + item.get(1) * 2 + item.get(2) * 1) {
+                collection2.add(item);
+                String temp = item.stream().map(String::valueOf).collect(Collectors.joining(""));
+                return String.valueOf(Integer.parseInt(temp));
+            }
+        }
+        return null;
+    }
+
+    private List<List<Integer>> getLists() {
+        List<List<Integer>> collection = new ArrayList<>();
+        collection.add(Arrays.asList(0, 1, 1));
+        collection.add(Arrays.asList(1, 0, 0));
+        collection.add(Arrays.asList(0, 1, 0));
+        collection.add(Arrays.asList(0, 0, 1));
+        collection.add(Arrays.asList(0, 0, 0));
+        return collection;
     }
 }
