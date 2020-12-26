@@ -54,8 +54,9 @@ public class ZeckendorfRepretation {
 
     private List<List<Integer>> getCandidates() {
         List<List<Integer>> collection = new ArrayList<>();
-        collection.add(Arrays.asList(0, 1, 1));
+        collection.add(Arrays.asList(1, 0, 1));
         collection.add(Arrays.asList(1, 0, 0));
+        collection.add(Arrays.asList(0, 1, 1));
         collection.add(Arrays.asList(0, 1, 0));
         collection.add(Arrays.asList(0, 0, 1));
         collection.add(Arrays.asList(0, 0, 0));
