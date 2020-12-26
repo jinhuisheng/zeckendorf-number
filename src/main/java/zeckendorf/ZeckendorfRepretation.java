@@ -1,6 +1,9 @@
 package zeckendorf;
 
+import java.util.Arrays;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public class ZeckendorfRepretation {
     public ZeckendorfRepretation(int start, int end) {
@@ -8,6 +11,6 @@ public class ZeckendorfRepretation {
     }
 
     public List<String> generate() {
-        return null;
+        return asList("0");
     }
 }
