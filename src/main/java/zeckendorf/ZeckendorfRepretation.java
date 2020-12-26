@@ -1,12 +1,8 @@
 package zeckendorf;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import static java.util.Arrays.asList;
 
 public class ZeckendorfRepretation {
     private final int start;
@@ -19,6 +15,15 @@ public class ZeckendorfRepretation {
     }
 
     public List<String> generate() {
-        return IntStream.range(start, end + 1).boxed().map(String::valueOf).collect(Collectors.toList());
+        return IntStream.range(start, end + 1).boxed().map(this::convert).collect(Collectors.toList());
+    }
+
+    private String convert(int i) {
+        if (i < 2) {
+            return String.valueOf(i);
+        }
+
+        //1 * 2 + 0 * 1;
+        return 1 + "" + "" + 0;
     }
 }
