@@ -10,6 +10,7 @@ import static java.util.stream.Collectors.toList;
 public class ZeckendorfRepretation {
     private final int start;
     private int end;
+    public static final List<Integer> FIBONACCI = Arrays.asList(13, 8, 5, 3, 2, 1);
 
     public ZeckendorfRepretation(int start, int end) {
 
@@ -31,7 +32,7 @@ public class ZeckendorfRepretation {
     }
 
     private List<Integer> getIntegers(int i) {
-        List<List<Integer>> matchedResult = new CandidateGenerator().generate(3).stream()
+        List<List<Integer>> matchedResult = new CandidateGenerator().generate(FIBONACCI.size()).stream()
                 .filter(candidate -> match(i, candidate))
                 .filter(this::notContinuous).collect(toList());
 
@@ -39,10 +40,9 @@ public class ZeckendorfRepretation {
     }
 
     private boolean match(int i, List<Integer> candidate) {
-        List<Integer> fibonacci = Arrays.asList(3, 2, 1);
         int sum = 0;
         for (int j = 0; j < candidate.size(); j++) {
-            sum += candidate.get(j) * fibonacci.get(j);
+            sum += candidate.get(j) * FIBONACCI.get(j);
         }
         return i == sum;
     }
