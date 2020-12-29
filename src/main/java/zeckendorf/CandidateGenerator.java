@@ -6,19 +6,19 @@ import java.util.List;
 
 public class CandidateGenerator {
     public static List<List<Integer>> generate(int digitCount) {
-        if (digitCount >= 2) {
-            List<List<Integer>> candidatesOfTwoDigit = generate(digitCount - 1);
-            List<List<Integer>> candidates = new ArrayList<>();
-            for (int i = 1; i >= 0; i--) {
-                for (List<Integer> candidateOfTwoDigit : candidatesOfTwoDigit) {
-                    List<Integer> candidate = new ArrayList<>();
-                    candidate.add(i);
-                    candidate.addAll(candidateOfTwoDigit);
-                    candidates.add(candidate);
-                }
-            }
-            return candidates;
+        if (digitCount == 1) {
+            return Arrays.asList(Arrays.asList(0), Arrays.asList(1));
         }
-        return Arrays.asList(Arrays.asList(1), Arrays.asList(0));
+        List<List<Integer>> candidates = new ArrayList<>();
+        List<List<Integer>> candidatesOfMinusOneDigit = generate(digitCount - 1);
+        for (int i = 0; i <= 1; i++) {
+            for (List<Integer> candidateOfMinusOneDigit : candidatesOfMinusOneDigit) {
+                List<Integer> candidate = new ArrayList<>();
+                candidate.add(i);
+                candidate.addAll(candidateOfMinusOneDigit);
+                candidates.add(candidate);
+            }
+        }
+        return candidates;
     }
 }
